@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/** Utility */
+.shadow{
+    box-shadow: 5px 10px 18px #888888;
+}
+
+img{
+    max-width: 50px;
+    border-radius: 50%;
+}
+
+/** Colore di Background */
+#background{
+    width: auto;
+    height: 100vh;
+    background-color: #009688;
+    background-image:
+      linear-gradient(
+        to bottom, 
+        #009688,
+        #009688 15%,
+        #DCDBD2 15%,
+        #DCDBD2 85%,
+        #DCDBD2 85%
+    );
+
+}
+.bg-lightgray{
+    background-color: #EAEAEA;
+}
+.bg-lightblue{
+    background-color: #8EDAFC;
+}
+/* # colors */
+
+.color-gray{
+    color: #B1B1B1;
+}
