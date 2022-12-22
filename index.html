@@ -27,19 +27,53 @@
             <div class="container shadow">
                 <div class="row d-flex flex-row">
                     <div class="col-4 d-flex flex-column p-0 flex-grow-1">
-                        <!-- Avatar (img_profilo) -->
-                        <div class="col-12 d-flex justify-content-between p-2 bg-lightgray" >
+                        <!-- Avatar Section (img_profilo) -->
+                        <div class="col-12 d-flex justify-content-between p-2 bg-lightgray">
                             <div role="button">
                                 <img src="img/avatar_io.jpg" alt="still image">
                                 <span>Sophia</span>
                             </div>
                             <div class="size-medium color-gray d-flex align-items-center">
                                 <i class="fas fa-circle-notch fa-2x px-2" role="button"></i>
-                                <i class="fas fa-comment-alt fa-2x px-3" role="button"></i>
+                                <i class="fa fa-comment-alt fa-2x px-3" role="button"></i>
                                 <i class="fas fa-ellipsis-v fa-2x px-2" role="button"></i>
                             </div>
                         </div>
 
+                        <!-- Notification Section -->
+                        <div class="col-12 bg-lightblue d-flex p-2">
+                            <div id="notification-box"
+                                class="bg-light rounded-circle px-3 d-flex align-items-center justify-content-center"
+                                role="button">
+                                <i class="fas fa-bell-slash size-big color-lightblue"></i>
+                            </div>
+                            <div class="px-1">
+                                <div class="fw-bold">Ricevi notifiche di nuovi messaggi</div>
+                                <div class="color-darkgray" role="button"><small><u>Attiva notifiche desktop</u></small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Search Section -->
+                        <div class="col-12 bg-lightgray p-2" id="search-section">
+                            <div class="bg-light color-darkgray rounded">
+                                <i class="fas fa-search ps-3 pe-3 color-lightgray"></i>
+                                <input @keyup="filterContacts" type="text" placeholder="Cerca o inizia una nuova chat"
+                                    class="w-75 bg-light">
+                            </div>
+                        </div>
+                        <!-- Contacts Section -->
+                        <div class="col-12 bg-light flex-grow-1">
+                            <div id="contacts-section">
+                                <div v-for="(contact, index) in contacts" role="button" class="py-2 px-3">
+                                    <img :src="'./img/avatar'+contact.avatar+'.jpg'" alt="avatar">
+                                    <span>{{contacts.name}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        
                     </div>
                 </div>
             </div>

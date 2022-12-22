@@ -4,7 +4,14 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            
+
+            utente : {
+                nome : 'Sophia',
+                avatar : '_io'
+              } ,
+            search: '',
+            currentIndex: 0,
+
             contacts: [
                 {
                     name: 'Michele',
@@ -181,5 +188,8 @@ createApp({
                 },
             ],
         }
-    }
-});
+    },
+methods: {
+
+    },
+}).mount('#app')
