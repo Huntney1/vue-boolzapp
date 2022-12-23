@@ -213,11 +213,14 @@ createApp({
                 };
                 this.contacts[this.currentIndex].messages.push(newAnswer)
             }, 1500);
+            
         },
-
+        deleteMessage(index) {
+            this.contacts[this.currentIndex].messages.splice(index, 1);
+        },
         
 
-        /* cambio contatto */
+        /* search cambio contatto */
         changeContact(index) {
             let trovato = false;
             for (let i = index; i < this.contacts.length && !trovato; i++) {
@@ -231,7 +234,7 @@ createApp({
             return index === this.currentIndex;
         },
 
-        //* filtra contatti
+         /* filtra contatti Search */
 
         filterContacts() {
             this.contacts.forEach((contact) => {
@@ -242,6 +245,8 @@ createApp({
                 }
             })
         },
+
+           //! Non funziona
         deleteMessage(index) {
             this.contacts[this.currentIndex].messages.splice(index, 1);
         },
