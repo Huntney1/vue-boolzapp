@@ -66,8 +66,11 @@
                         <div class="col-12 bg-light flex-grow-1">
                             <div id="contacts-section">
                                 <div v-for="(contact, index) in contacts" role="button" class="py-2 px-3">
-                                    <img :src="'./img/avatar'+contact.avatar+'.jpg'" alt="avatar">
-                                    <span>{{contacts.name}}</span>
+                                    <img :src="`img/avatar${contact.avatar}.jpg`" alt="avatar">
+                                    <span>{{ contact.name }}</span>
+                                    <p>{{contact.messages[contact.messages.length -1].text}}</p>
+                                
+
                                 </div>
                             </div>
                         </div>
