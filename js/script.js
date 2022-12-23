@@ -5,12 +5,15 @@ createApp({
     data() {
         return {
 
-            utente : {
-                nome : 'Sophia',
-                avatar : '_io'
-              } ,
             search: '',
+            newMessage: '',
             currentIndex: 0,
+
+            utente: {
+                nome: 'Sophia',
+                avatar: '_io'
+            },
+
 
             contacts: [
                 {
@@ -189,7 +192,58 @@ createApp({
             ],
         }
     },
-methods: {
+    methods: {
 
+        /* invio e ricevo messaggio */
+        addMessage() {
+            let newMessage = {
+                date: '28/03/2020 10:10:40',
+                text: this.newMessage,
+                status: 'sent'
+            };
+            this.contacts[this.currentIndex].messages.push(newMessage)
+            
+            this.newMessage = '';
+
+            setTimeout(() => {
+                let newAnswer = {
+                    date: '28/03/2020 11:10:40',
+                    text: 'Ciao',
+                    status: 'received'
+                };
+                this.contacts[this.currentIndex].messages.push(newAnswer)
+            }, 1500);
+        },
+
+        
+
+        /* cambio contatto */
+        changeContact(index) {
+            let trovato = false;
+            for (let i = index; i < this.contacts.length && !trovato; i++) {
+                if (this.contacts[i].visible) {
+                    this.currentIndex = i;
+                    trovato = true;
+                }
+            }
+        },
+        isActive(index) {
+            return index === this.currentIndex;
+        },
+
+        //* filtra contatti
+
+        filterContacts() {
+            this.contacts.forEach((contact) => {
+                if (!contact.name.toLowerCase().includes(this.search.toLowerCase())) {
+                    contact.visible = false;
+                } else {
+                    contact.visible = true;
+                }
+            })
+        },
+        deleteMessage(index) {
+            this.contacts[this.currentIndex].messages.splice(index, 1);
+        },
     },
 }).mount('#app')
