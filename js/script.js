@@ -4,7 +4,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            now: dayjs().format('HH:mm'),
+            now:'12:30',
             search: '',
             newMessage: '',
             currentIndex: 0,
@@ -219,7 +219,6 @@ createApp({
             this.contacts[this.currentIndex].messages.splice(index, 1);
         },
         
-
         /* search cambio contatto */
         changeContact(index) {
             let discovery = false;
@@ -247,7 +246,7 @@ createApp({
         },
 
         /* index cancella */
-           //! Non funziona
+           //! funziona ma non bene
         deleteMessage(index) {
             this.contacts[this.currentIndex].messages.splice(index, 1);
         },

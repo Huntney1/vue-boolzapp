@@ -116,8 +116,9 @@
                                             <div class="message p-2 rounded shadow">
                                                 <div class="d-flex align-items-center">
                                                     <div class="pe-1">{{message.text}}</div>
+
+                                                    <!-- Drop Down Button -->
                                                     <div class="drop">
-                                                        <!-- Drop Down Button -->
                                                         <button class="drop-button">
                                                             <i class="fas fa-chevron-down" role="button"></i>
                                                         </button>
@@ -128,6 +129,7 @@
                                                                 @click="deleteMessage(index)">Cancella
                                                             </button>
                                                         </div>
+
                                                     </div>
                                                 </div>
                                                 <time class="date color-gray d-flex justify-content-end">
@@ -160,4 +162,3 @@
 </body>
 
 </html>
-
