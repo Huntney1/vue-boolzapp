@@ -131,13 +131,13 @@ input{
     font-size: 20px;
 }
 
-/* Button */
+/* Button search messages */
 
-/* .list-button{
+.list-button{
     border: 0;
     border-radius: 50rem;
     background-color: transparent;
-} */
+}
 
 /* Arrow Button */
 .drop{
@@ -157,7 +157,7 @@ input{
 }
 
 /* Drop Down Button */
-.drop > .drop-button:focus + .drop-menu{
+/* .drop > */ .drop-button:focus + .drop-menu{
     display: block;
 }
 

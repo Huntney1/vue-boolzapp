@@ -4,7 +4,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            now:'12:30',
+            now: '12:30',
             search: '',
             newMessage: '',
             currentIndex: 0,
@@ -202,23 +202,27 @@ createApp({
                 status: 'sent'
             };
             this.contacts[this.currentIndex].messages.push(newMessage)
-            
+
             this.newMessage = '';
 
             setTimeout(() => {
                 let newAnswer = {
                     date: '28/03/2020 11:10:40',
-                    text: 'Ciao',
+                    text: 'Ciao come va!?',
                     status: 'received'
                 };
                 this.contacts[this.currentIndex].messages.push(newAnswer)
             }, 1500);
-            
+
         },
+
+        /* index cancella messages */
+        //! funziona ma non bene
+
         deleteMessage(index) {
             this.contacts[this.currentIndex].messages.splice(index, 1);
         },
-        
+
         /* search cambio contatto */
         changeContact(index) {
             let discovery = false;
@@ -233,7 +237,7 @@ createApp({
             return index === this.currentIndex;
         },
 
-         /* filtra contatti Search */
+        /* filtra contatti Search */
 
         filterContacts() {
             this.contacts.forEach((contact) => {
@@ -243,12 +247,6 @@ createApp({
                     contact.visible = true;
                 }
             })
-        },
-
-        /* index cancella */
-           //! funziona ma non bene
-        deleteMessage(index) {
-            this.contacts[this.currentIndex].messages.splice(index, 1);
         },
     },
 }).mount('#app')
