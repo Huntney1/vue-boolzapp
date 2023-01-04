@@ -142,6 +142,7 @@ input{
 /* Arrow Button */
 .drop{
     position:relative;
+    
 }
 
 .drop-menu{
@@ -157,11 +158,13 @@ input{
 }
 
 /* Drop Down Button */
-/* .drop > */ .drop-button:focus + .drop-menu{
+.drop > .drop-button:focus + .drop-menu{
     display: block;
+  
 }
 
 .drop-button{
     background-color: transparent;
     border: 0;
 }
+

@@ -217,7 +217,7 @@ createApp({
         },
 
         /* index cancella messages */
-        //! funziona ma non bene
+        //! funziona ma non bene l'html o il css...working progress
 
         deleteMessage(index) {
             this.contacts[this.currentIndex].messages.splice(index, 1);
